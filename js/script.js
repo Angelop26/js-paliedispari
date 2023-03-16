@@ -50,18 +50,38 @@ const cpuNumber = rndnmb(1, 5)
 console.log(userNumber, cpuNumber);
 const sum = userNumber + cpuNumber
 console.log(sum);
-if (sum %2 === 0 && userChoice === 'pari') {
+
+const result = IsOddorEven(sum, userChoice)
+console.log(result);
+
+if (userChoice === result) {
     console.log('hai vinto');
 } else {
     console.log('hai perso');
 }
+
 /**
  * generare un numero random in questo range
  * @param {number} min  range minimo 
  * @param {number} max range massimo
- * result il numero
+ * @returns il numero
  */
 function rndnmb(min, max){
     return Math.floor(Math.random() * (max - min) ) + min;
 }
 
+/**
+ * ti dice se un numero è pari o dispari
+ * @param {number} Number 
+ * @param {string} userOddorEven 
+ * @returns pari o dispari 
+ */
+
+function IsOddorEven(Number, userOddorEven){
+    let oddoreven =''
+    if (Number %2 === 0) {
+        return oddoreven = 'pari';
+    } else {
+        return oddoreven = 'dispari';
+    }    
+}
